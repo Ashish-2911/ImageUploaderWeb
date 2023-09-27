@@ -14,7 +14,7 @@
             {% for img in img %}
             <div class="col-3">
                 <div class="card m-2">
-                    <a href="{% url 'photo' img.id %}"><img src="{{img.photo.url}}" alt="" class="card-img-top" height="200px"></a>
+                    <a href="{% url 'photo' img.id %}"><img src="{{img.photo.url}}" alt="" class="card-img-top" height="200px"><i class="fa-solid fa-download"></i></a>
                     <div class="card-footer">
                         <small class="text-muted">{{img.date}}</small>
                     </div>
