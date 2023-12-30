@@ -2,12 +2,14 @@
 {% block content %}
 
 <div class="container">
-    <div class="py-5 text-center bg-secondary text-white ">
-        <h1 class="mb-3">You clicked on this image</h1>
+    <div class="row justify-content-center">
+        <div class="py-5 text-center text-white phoclick col-5">
+            <h1 class="mb-3">You clicked on this image</h1>
+        </div>
     </div>
     <div class="row justify-content-center mt-5">
-        <div class="col-8" >
-            <img src="{{img.photo.url}}" alt="" class="card-img-top" height="700px">
+        <div class="col-5" >
+            <img src="{{img.photo.url}}" alt="" class="card-img-top divauto" height="700px" style="margin-bottom:30px;">
         </div>
     </div>
 </div>
