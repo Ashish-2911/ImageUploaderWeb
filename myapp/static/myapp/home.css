@@ -12,5 +12,19 @@
 .divauto{
     width: 100%; /* Make the image fill the container width */
     height: auto;
-    object-fit: cover;
+    transition: background-color 0.3s ease;
+    /* object-fit: cover; */
 }
+
+.image-zoom img {
+    transition: transform 0.3s ease;
+}
+
+.image-zoom:hover img {
+    transform: scale(1.2);
+}
+
+/* .container-fluid{ */
+    /* position: sticky; */
+    /* top: 0; */
+/* } */
