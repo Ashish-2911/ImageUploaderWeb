@@ -9,9 +9,11 @@ def home(request):
         form = ImageForm(request.POST , request.FILES)
         if form.is_valid():
             form.save()
-    form = ImageForm()
-    img = Image.objects.all()
-    return render(request,'myapp/home.html',{'form':form,'img':img })
+        img = Image.objects.all()
+        return render(request,'myapp/home.html',{'img':img })
+    else:
+        form = ImageForm()           
+        return render(request,'myapp/home.html',{'form':form})
 
 
 def photoShow(request,id):
