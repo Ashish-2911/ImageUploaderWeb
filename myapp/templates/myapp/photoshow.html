@@ -1,13 +1,11 @@
 {% extends 'myapp/base.html' %}
 {% block content %}
 
-<div class="container-fluid">
-    <div class="row justify-content-center mt-3">
-        <div>
-            <img src="{{img.photo.url}}" alt="" class="card-img-top divauto" style="margin-bottom:30px;">
-            <a href="{{img.photo.url}}" class="btn btn-primary mb-5" download>Download</a>
+<div class="mycontainer">
+        <div class="picshow">
+            <img src="{{img.photo.url}}" alt="" class="img-card" >
+            <a href="{{img.photo.url}}" class="button" download>Download</a>
         </div>
-    </div>
 </div>
 
 
