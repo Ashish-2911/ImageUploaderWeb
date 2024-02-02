@@ -1,16 +1,10 @@
 {% extends 'myapp/base.html' %}
 
 {% block content %}
-    <div class="container ">
-        <div class="row mt-5">
-            {% for img in img %}
-            <div class="col-3">
-                <div class="card m-1">
-                    <a href="{% url 'photo' img.id %}" class="image-zoom"><img src="{{img.photo.url}}" alt="" class="card-img-top "></img></a>
-                </div>
-            </div>
-            {% endfor%}
-        </div>
-    </div>
-{% endblock %}
+    <section class="gallery">
+        {% for img in img %}
+            <img src="{{img.photo.url}}" alt="image" class="gallery-img"></img>
+        {% endfor%}
+    </section>
+{% endblock content %}
 
