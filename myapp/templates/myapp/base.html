@@ -1,5 +1,5 @@
-<!DOCTYPE html>
 {% load static %}
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -34,7 +34,7 @@
                 </ul>
                 <div class="py-3 text-center upimgcss">
                     <h1 class="mb-2">Submit a photo </h1>
-                    <form action="" method="post" enctype="multipart/form-data" class="mt-3">
+                    <form action="" method="post" enctype="multipart/form-data" class="mt-3 form-control">
                         {%csrf_token%}
                         {{form}}
                         <input type="submit" class="btn btn-danger">

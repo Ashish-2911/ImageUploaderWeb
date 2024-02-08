@@ -17,7 +17,6 @@ def home(request):
 
 
 def photoShow(request,id):
-    # if request.method == 'POST':
     images = Image.objects.get(pk=id)
     return render(request,'myapp/photoshow.html',{'img':images})
 

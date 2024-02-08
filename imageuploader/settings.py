@@ -33,7 +33,9 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.middleware.cache.FetchFromCacheMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -96,12 +98,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 
-USE_TZ = True
-TIME_ZONE = 'Asia/Kolkata'
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
@@ -116,4 +117,35 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+CACHE_MIDDLEWARE_SECONDS = 40
+
+# for per site view cache in database
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',  # Choose your backend
+        'LOCATION': 'app_cache',  # Unique name for the cache instance
+    }
+}
+
+
+# # for per site view cache in filebased
+
+# CACHES = {
+#     'default': {
+#         'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',  # Choose your backend
+#         'LOCATION': 'C:\\Users\\Ashish Kumar\\Desktop\\Projects\\Picsplash\\cache'
+#     }
+# }
+
+
+# for per site view cache in local memory caching
+# this is not use for production.used in development 
+
+# CACHES = {
+#     'default': {
+#         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',  # Choose your backend
+#         'LOCATION': 'unique-snowflake',  #give any name here.
+#     }
+# }
 
