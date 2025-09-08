@@ -10,4 +10,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home),
     path('photo/<int:id>/', views.photoShow,name='photo'),
+    path('cache/', views.my_cached_view, name='cache_view'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

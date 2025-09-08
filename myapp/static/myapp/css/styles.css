@@ -12,7 +12,7 @@
 .gallery{
     width: 100%;
     padding: 40px;
-    background: white;
+    background: rgb(213, 44, 44);
     columns: 3;
     column-gap: 20px;
 }
@@ -43,8 +43,8 @@
     align-items: center; 
 }
 .img-card{
-    width: 70%;
-    height: 80%;
+    width: auto;
+    height: auto;
     object-fit: cover;
     margin-top: 30px;
     margin-bottom: 40px;
@@ -69,3 +69,22 @@
 
 
 
+@media (max-width: 768px) {
+    .gallery {
+        columns: 2; /* Change to 2 columns on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        columns: 1; /* Change to 1 column on very small screens */
+    }
+    .picshow{
+        width: 100%;
+        height: 100%;
+    }
+    .img-card{
+        width: 100%;
+        height: 100%;
+    }
+}

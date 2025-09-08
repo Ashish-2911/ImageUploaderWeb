@@ -21,3 +21,13 @@ def photoShow(request,id):
     return render(request,'myapp/photoshow.html',{'img':images})
 
 #website to be continue......
+
+
+from django.http import HttpResponse
+from django.views.decorators.cache import cache_page
+import datetime
+
+@cache_page(60 * 2)  # 2 minutes ke liye cache
+def my_cached_view(request):
+    now = datetime.datetime.now()
+    return HttpResponse(f"Cached Time: {now}")
