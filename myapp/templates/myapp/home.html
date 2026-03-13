@@ -2,7 +2,11 @@
 
 {% block content %}
     <section class="gallery">
+<<<<<<< HEAD
         {% for img in page_obj %}
+=======
+        {% for img in img %}
+>>>>>>> 1f018e3541f68113e6efeb125de1e870d587b311
         <a href="{% url 'photo' img.id %}" target="_self"><img src="{{img.photo.url}}" alt="image" class="gallery-img"></img></a>
         {% endfor%}
     </section>

@@ -14,7 +14,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 # Application definition
@@ -117,7 +117,11 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+<<<<<<< HEAD
 # CACHE_MIDDLEWARE_SECONDS = 400
+=======
+CACHE_MIDDLEWARE_SECONDS = 400
+>>>>>>> 1f018e3541f68113e6efeb125de1e870d587b311
 
 # # for per site view cache in database
 
@@ -127,25 +131,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #         'LOCATION': 'app_cache',  # Unique name for the cache instance
 #     }
 # }
+<<<<<<< HEAD
+=======
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.redis.RedisCache',
+        'LOCATION': 'redis://127.0.0.1:6379/1',  # database 1 in Redis
+    }
+}
+>>>>>>> 1f018e3541f68113e6efeb125de1e870d587b311
 
-# # for per site view cache in filebased
-
-# CACHES = {
-#     'default': {
-#         'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',  # Choose your backend
-#         'LOCATION': 'C:\\Users\\Ashish Kumar\\Desktop\\Projects\\Picsplash\\cache'
-#     }
-# }
-
-
-# for per site view cache in local memory caching
-# this is not use for production.used in development 
-
-# CACHES = {
-#     'default': {
-#         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',  # Choose your backend
-#         'LOCATION': 'unique-snowflake',  #give any name here.
-#     }
-# }
 
