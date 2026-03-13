@@ -6,5 +6,16 @@
         <a href="{% url 'photo' img.id %}" target="_self"><img src="{{img.photo.url}}" alt="image" class="gallery-img"></img></a>
         {% endfor%}
     </section>
+
+    <div class="pagination mt-4 mb-4 d-flex justify-content-evenly">
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-outline-dark btn-border">Previous</a>
+        {% endif %}
+
+        <span class="current-page">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}" class="btn btn-outline-dark btn-border">Next</a>
+        {% endif %}
 {% endblock content %}
 
