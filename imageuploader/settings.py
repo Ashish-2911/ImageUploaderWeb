@@ -117,11 +117,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-<<<<<<< HEAD
 # CACHE_MIDDLEWARE_SECONDS = 400
-=======
-CACHE_MIDDLEWARE_SECONDS = 400
->>>>>>> 1f018e3541f68113e6efeb125de1e870d587b311
 
 # # for per site view cache in database
 
@@ -131,15 +127,5 @@ CACHE_MIDDLEWARE_SECONDS = 400
 #         'LOCATION': 'app_cache',  # Unique name for the cache instance
 #     }
 # }
-<<<<<<< HEAD
-=======
-
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.redis.RedisCache',
-        'LOCATION': 'redis://127.0.0.1:6379/1',  # database 1 in Redis
-    }
-}
->>>>>>> 1f018e3541f68113e6efeb125de1e870d587b311
 
 
