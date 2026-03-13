@@ -2,8 +2,8 @@
 
 {% block content %}
     <section class="gallery">
-        {% for img in img %}
-        <a href="{% url 'photo' img.id %}"><img src="{{img.photo.url}}" alt="image" class="gallery-img"></img></a>
+        {% for img in page_obj %}
+        <a href="{% url 'photo' img.id %}" target="_self"><img src="{{img.photo.url}}" alt="image" class="gallery-img"></img></a>
         {% endfor%}
     </section>
 {% endblock content %}

@@ -117,16 +117,16 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CACHE_MIDDLEWARE_SECONDS = 40
+# CACHE_MIDDLEWARE_SECONDS = 400
 
-# for per site view cache in database
+# # for per site view cache in database
 
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',  # Choose your backend
-        'LOCATION': 'app_cache',  # Unique name for the cache instance
-    }
-}
+# CACHES = {
+#     'default': {
+#         'BACKEND': 'django.core.cache.backends.db.DatabaseCache',  # Choose your backend
+#         'LOCATION': 'app_cache',  # Unique name for the cache instance
+#     }
+# }
 
 
 # # for per site view cache in filebased

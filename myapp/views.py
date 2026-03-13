@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from .forms import ImageForm
 from .models import Image
+from django.core.paginator import Paginator
 
 # Create your views here.
 
@@ -12,8 +13,13 @@ def home(request):
             form = ImageForm()   
             return redirect('/')    
     form = ImageForm() 
-    img = Image.objects.all()          
-    return render(request,'myapp/home.html',{'form':form,'img':img})
+    img = Image.objects.all().order_by('-id') # to show latest image first  
+    paginator = Paginator(img, per_page=6) # Show 6 images per page       
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    print(page_number)
+    print(page_obj)
+    return render(request,'myapp/home.html',{'form':form,'page_obj':page_obj})
 
 
 def photoShow(request,id):
