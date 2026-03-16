@@ -26,3 +26,6 @@ def photoShow(request,id):
     return render(request,'myapp/photoshow.html',{'img':images})
 
 #website to be continue......
+
+
+

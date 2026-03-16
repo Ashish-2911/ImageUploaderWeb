@@ -14,7 +14,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 # Application definition
@@ -128,24 +128,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #     }
 # }
 
-
-# # for per site view cache in filebased
-
-# CACHES = {
-#     'default': {
-#         'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',  # Choose your backend
-#         'LOCATION': 'C:\\Users\\Ashish Kumar\\Desktop\\Projects\\Picsplash\\cache'
-#     }
-# }
-
-
-# for per site view cache in local memory caching
-# this is not use for production.used in development 
-
-# CACHES = {
-#     'default': {
-#         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',  # Choose your backend
-#         'LOCATION': 'unique-snowflake',  #give any name here.
-#     }
-# }
 
